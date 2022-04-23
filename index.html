@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Console Rock Paper Scissors</title>
+</head>
+<body>
+  <script>
+    function computerPlay() {
+      switch (Math.floor(Math.random() * 3)) {
+        case 0:
+          computerGuess = "rock";
+          break;
+        case 1:
+          computerGuess = "paper";
+          break;
+        case 2:
+          computerGuess = "scissors";
+          break;
+      }
+      return computerGuess;
+    }
+
+    function playerPlay() {
+      let playerGuess = prompt("Rock, Paper or Scissors?");
+      playerGuess = playerGuess.toLowerCase();
+      return playerGuess;
+    }
+
+    function singleRound(player, computer) {
+      if (player == computer) {
+        console.log("It's a draw!");
+      } else if (player == "rock") {
+        if (computer == "paper") {
+          console.log("Paper covers rock - Computer wins!");
+          ++score[1];
+        } else {
+          console.log("Rock breaks scissors - Player wins!");
+          ++score[0];
+        }
+      } else if (player == "paper") {
+        if (computer == "scissors") {
+          console.log("Scissors cut paper - Computer wins!");
+          ++score[1];
+        } else {
+          console.log("Paper covers rock - Player wins!");
+          ++score[0];
+        }
+      } else if (player == "scissors") {
+        if (computer == "rock") {
+          console.log("Rock breaks scissors - Computer wins!");
+          ++score[1];
+        } else {
+          console.log("Scissors cut paper - Player wins!");
+          ++score[0];
+        }
+      } else {
+        console.log("I did not understand that!");
+      }
+      return score;
+    }
+
+    function game() {
+      for (let i = 0; i < 5; i++) {
+        singleRound(playerPlay(), computerPlay());
+        
+      }
+      console.log(`Final Score - Player: ${score[0]} Computer: ${score[1]}`);
+      if (score[0] > score [1]) {
+        console.log("Player Wins!");
+      } else if (score[1] > score [0]) {
+        console.log("Computer Wins!");
+      } else {
+        console.log("It's a draw!");
+      }
+    }
+
+    let score = [0, 0];
+
+    game();
+  </script>
+</body>
+</html>
