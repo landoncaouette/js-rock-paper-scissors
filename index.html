@@ -12,29 +12,34 @@
 <body>
   <div class="container">
     <div class="row">
-      <div id="header" class="col text-center">
+      <div id="header" class="col text-center mt-5 mb-2 ">
         <h1>Rock Paper Scissors</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <button id="newgame" class="btn btn-secondary my-4">New game</button>
+    <div class="row text-center m-5">
+      <div class="col-md-4 text-center">
+        <button id="rock" class="btn btn-outline-danger btn-lg ">Rock</button>
+      </div>
+      <div class="col-md-4 text-center">
+        <button id="paper" class="btn btn-outline-danger btn-lg">Paper</button>
+      </div>
+      <div class="col-md-4 text-center">
+        <button id="scissors" class="btn btn-outline-danger btn-lg">Scissors</button>
       </div>
     </div>
-    <div class="row text-center">
-      <div id="left" class="col-md-4 h-25 text-center">
-        
-      </div>
-      <div id="center" class="col-md-4 h-25 text-center">
-        
-      </div>
-      <div id="right" class="col-md-4 h-25 text-center">
-        
+    <div class="row text-center m-3">
+      <div class="col text-center m-3">
+        <h4 id="winner"></h4  >
       </div>
     </div>
-    <div class="row text-center">
-      <div id="winner" class="col">
-
+    <div class="row text-center m-3">
+      <div class="col text-center m-3">
+        <h5 id="scoreboard"></h5>
+      </div>
+    </div>
+    <div class="row text-center m-3">
+      <div class="col text-center m-3">
+        <h2 id="gameover" class="text-danger"></h2>
       </div>
     </div>
   </div>
